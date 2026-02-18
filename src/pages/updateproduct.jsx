@@ -18,7 +18,7 @@ export default function UpdateProduct() {
   // Fetch product by ID when component mounts
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/products/${id}`)
+      .get(`https://api-server-mg9o.onrender.com/products/${id}`)
       .then((res) => setProduct(res.data))
       .catch((err) => console.log("error fetching product:", err));
   }, [id]);
@@ -26,7 +26,7 @@ export default function UpdateProduct() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:3000/products/${id}`, product)
+      .put(`https://api-server-mg9o.onrender.com/products/${id}`, product)
       .then((res) => {
         setProduct(res.data);
         alert("✅ Product updated successfully!");

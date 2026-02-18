@@ -8,10 +8,10 @@ export default function DisplayProduct() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:4000/products")
+    axios.get("https://api-server-mg9o.onrender.com/products")
 
-    .then((res) => setProduct(res.data))
-    .catch((err) => console.log("err", err));
+      .then((res) => setProduct(res.data))
+      .catch((err) => console.log("err", err));
   }, []);
 
   const handleAdd = () => {
@@ -20,7 +20,7 @@ export default function DisplayProduct() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:3000/products/${id}`)
+      .delete(`https://api-server-mg9o.onrender.com/products/${id}`)
       .then(() => {
         setProduct(product.filter((p) => p.id !== id));
         alert("❌ Product deleted");

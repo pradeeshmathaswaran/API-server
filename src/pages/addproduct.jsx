@@ -17,7 +17,7 @@ export default function AddProduct() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/products", product)
+      .post("https://api-server-mg9o.onrender.com/products", product)
       .then((res) => {
         setProduct(res.data);
         alert("✅ Product inserted");
